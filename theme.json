@@ -1,0 +1,110 @@
+{
+  "name": "ueno",
+  "name#ja": "上野",
+  "name#zh": "上野",
+  "version": "0.1.0",
+  "repo": "typlog/theme-ueno",
+  "image": "https://user-images.githubusercontent.com/290496/183670180-bfd89bab-18fe-45f8-a9bc-485695f0f075.png",
+  "description": "A two columns theme for blogs and podcasts.",
+  "context": {
+    "_static_url": "/src",
+    "theme_color_mode": "auto",
+    "theme_nav_links": [
+      {
+        "title": "Blog",
+        "url": "/blog/"
+      },
+      {
+        "title": "GitHub",
+        "url": "https://github.com/typlog/theme-ueno",
+        "blank": true
+      }
+    ],
+    "theme_copyright": "Copy &copy; 2024, <a href='https://typlog.com/'>Typlog</a>"
+  },
+  "variables": {
+    "color_mode": {
+      "type": "enum",
+      "default": "auto",
+      "choices": ["auto", "light", "dark"]
+    },
+    "nav_links": {
+      "type": "object[]",
+      "properties": {
+        "title": {
+          "type": "string",
+          "required": true
+        },
+        "url": {
+          "type": "string",
+          "required": true
+        },
+        "blank": {
+          "type": "boolean"
+        }
+      }
+    },
+    "podcast_links": {
+      "type": "object[]",
+      "properties": {
+        "icon": {
+          "type": "icon"
+        },
+        "title": {
+          "type": "string",
+          "required": true
+        },
+        "url": {
+          "type": "url",
+          "required": true
+        },
+        "blank": {
+          "type": "boolean"
+        }
+      }
+    },
+    "social_links": {
+      "type": "object[]",
+      "properties": {
+        "icon": {
+          "type": "icon",
+          "required": true
+        },
+        "title": {
+          "type": "string",
+          "required": true
+        },
+        "url": {
+          "type": "url",
+          "required": true
+        },
+        "blank": {
+          "type": "boolean"
+        }
+      }
+    },
+    "copyright": {
+      "type": "string"
+    }
+  },
+  "messages": {
+    "none": "There is no items",
+    "none#zh": "没有内容",
+    "archive": "Archive",
+    "archive#zh": "归档",
+    "prev": "Previous",
+    "prev#zh": "上一页",
+    "next": "Next",
+    "next#zh": "下一页",
+    "readthis": "Read This",
+    "readthis#zh": "下一篇",
+    "switch_auto": "Switch to auto color mode",
+    "switch_auto#zh": "切换至系统默认模式",
+    "switch_light": "Switch to light color mode",
+    "switch_light#zh": "切换至明亮模式",
+    "switch_dark": "Switch to dark color mode",
+    "switch_dark#zh": "切换至黑暗模式",
+    "copy": "Copy",
+    "copy#zh": "复制"
+  }
+}

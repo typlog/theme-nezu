@@ -1,0 +1,34 @@
+{% block styles %}
+<link rel="stylesheet" href="{{ _static_url }}/index.css">
+{% endblock %}
+
+{% block scripts %}
+<script src="https://code.iconify.design/iconify-icon/2.2.0/iconify-icon.min.js"></script>
+<script src="{{ _static_url }}/index.js" type="module"></script>
+{% endblock %}
+
+{% block body %}
+  <div class="absolute top-4 right-4">
+    {% include "./_partials/theme-switch.j2" %}
+  </div>
+  <div class="body">
+    {% include "./_partials/site-side.j2" %}
+    <div class="main">
+      <div class="inner main_mark">
+        <section class="main_head">
+          <h1>{{ column.title }}</h1>
+          {% if column.subtitle %}
+            <h2>{{ column.subtitle }}</h2>
+          {% endif %}
+        </section>
+        {% if pagination.items %}
+          {% for note in pagination.items %}
+            {% include "./_partials/entry-item.j2" %}
+          {% endfor %}
+        {% endif %}
+        {% include "./_partials/navigation.j2" %}
+      </div>
+    </div>
+  </div>
+  {% include "./_partials/site-foot.j2" %}
+{% endblock %}

@@ -66,8 +66,8 @@
             </div>
             {% include "./_partials/share-buttons.j2" %}
           </div>
-          {% set prev_note = query.previous_note(note.published_at) %}
         </article>
+        {% set prev_note = query.previous_note(note.published_at) %}
         {% if prev_note %}
           <section class="entry-section prev-subject">
             <h2>{{ translate('readthis') }}</h2>

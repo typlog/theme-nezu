@@ -3,7 +3,11 @@ module.exports = {
   darkMode: ['class'],
   content: ["./templates/**/*.j2"],
   theme: {
-    extend: {},
+    extend: {
+      borderColor: {
+        DEFAULT: 'var(--gray-a4)',
+      },
+    },
   },
   plugins: [],
 }

@@ -1,0 +1,95 @@
+{% block styles %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700&display=swap">
+<link rel="stylesheet" href="{{ _static_url }}/snow.css">
+{% endblock %}
+
+{% block scripts %}
+<script src="https://code.iconify.design/iconify-icon/2.2.0/iconify-icon.min.js"></script>
+<script src="{{ _static_url }}/index.js" type="module"></script>
+{% include "./_partials/copy-code.j2" %}
+{% endblock %}
+
+{% block body %}
+  <div class="site-nav{% if note.cover and note.cover.src %} has-cover{% endif %}">
+    <a class="site-link" href="/">{{ site.name }}</a>
+  </div>
+  <article role="main" class="h-entry {{ note.note_type }}{% if note.cover and note.cover.src %} has-cover{% endif %}">
+    {% if note.cover and note.cover.src %}
+      <div class="entry-cover">
+        <img class="u-photo" src="{{ note.cover|thumbnail }}" alt="{{ note.title }}">
+      </div>
+    {% endif %}
+    <div class="entry-meta inner">
+      {% if note.note_type == 'audio' %}
+        {% set episode = note.audio %}
+        {% if episode.season and episode.episode %}
+          <span class="item-label">S{{ episode.season }}E{{ episode.episode }}</span>
+        {% endif %}
+        <span class="item-label">{{ episode.audio.duration|durationformat }}</span>
+      {% endif %}
+      {% if note.published_at %}
+        <time class="dt-published" datetime="{{ note.published_at|xmldatetime }}"
+              itemprop="datePublished">{{ note.published_at|dateformat('%b %d, %Y') }}</time>
+      {% endif %}
+      {% if note.tags %}
+        <div class="entry-tags">
+          {% for tag in note.tags %}
+            <a class="p-category" href="{{ tag.url }}">{{ tag.title }}</a>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+    <div class="inner">
+      <h1 class="p-name" itemprop="headline">{{ note.title }}</h1>
+      {% if note.subtitle %}
+        <h2 class="p-summary">{{ note.subtitle }}</h2>
+      {% endif %}
+      {% if note.review %}
+        {% include "./_partials/review.j2" %}
+      {% endif %}
+      <div class="e-content" itemprop="articleBody">
+        {% if note.note_type == 'audio' %}
+          {% set episode = note.audio %}
+          <div class="entry-audio js-audio">
+            <audio class="u-audio" src="{{ episode.audio.src }}" preload="none" controls
+                  data-title="{{ note.title }}"
+                  data-duration="{{ episode.audio.duration }}"
+                  {% if episode.image %}data-image="{{ episode.image }}"{% endif %}>
+            </audio>
+          </div>
+        {% endif %}
+        {{ note.content|safe }}
+      </div>
+    </div>
+  </article>
+  <div class="inner">
+    <div class="flex justify-between items-center mb-4">
+      <div class="entry-enjoy">
+        <button class="enjoy js-enjoy">Enjoy</button>
+      </div>
+      {% include "./_partials/share-buttons.j2" %}
+    </div>
+    {% set prev_note = query.previous_note(note.published_at) %}
+    {% if prev_note %}
+      <section class="entry-section">
+        <h2>{{ translate('readthis') }}</h2>
+        <div class="item" lang="{{ prev_note.lang }}">
+          <a class="item-main" href="{{ prev_note.url }}">
+            <h3>{{ prev_note.title }}</h3>
+            {% if prev_note.subtitle %}
+            <div class="item-subtitle">{{ prev_note.subtitle }}</div>
+            {% endif %}
+          </a>
+        </div>
+      </section>
+    {% endif %}
+  </div>
+  <section class="entry-section comment">
+    <div class="inner">
+      {% include "components/web-comment.j2" %}
+    </div>
+  </section>
+  {% include "./_partials/site-foot.j2" %}
+{% endblock %}

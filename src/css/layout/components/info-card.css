@@ -1,0 +1,23 @@
+.info-card {
+  margin: 2rem 0;
+  padding-top: 6rem;
+}
+
+.info-card a {
+  color: var(--gray-12);
+  text-decoration: none;
+}
+
+.info-card h1 {
+  line-height: 1.2;
+  font-size: 34px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.info-card h2 {
+  margin: 0 0 1rem;
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--gray-10);
+}

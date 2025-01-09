@@ -8,24 +8,19 @@
 {% endblock %}
 
 {% block body %}
-  <div class="absolute top-4 right-4">
-    {% include "./_partials/theme-switch.j2" %}
-  </div>
-  <div class="body">
-    {% include "./_partials/site-side.j2" %}
-    <div class="main">
-      <div class="inner main_mark">
-        <section class="main_head">
-          <h1>{{ translate('archive') }}</h1>
-        </section>
-        {% if pagination.items %}
-          {% for note in pagination.items %}
-            {% include "./_partials/entry-item.j2" %}
-          {% endfor %}
-        {% endif %}
-        {% include "./_partials/navigation.j2" %}
-      </div>
+  {% include "./_layouts/site-head.j2" %}
+  <div class="container">
+    <section class="info-card">
+      <h1>{{ translate('archive') }}</h1>
+    </section>
+    <div class="entry-list">
+      {% if pagination.items %}
+        {% for note in pagination.items %}
+          {% include "./_partials/entry-item.j2" %}
+        {% endfor %}
+      {% endif %}
+      {% include "./_partials/navigation.j2" %}
     </div>
   </div>
-  {% include "./_partials/site-foot.j2" %}
+  {% include "./_layouts/site-foot.j2" %}
 {% endblock %}

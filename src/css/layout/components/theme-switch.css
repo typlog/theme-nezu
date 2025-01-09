@@ -8,30 +8,6 @@ button.theme-switch {
   cursor: pointer;
 }
 
-.theme-switch:after {
-  display: none;
-  content: attr(aria-label);
-  position: absolute;
-  top: 100%;
-  right: 0;
-  padding: 0 10px;
-  border-radius: 3px;
-  background-color: var(--gray-12);
-  color: var(--gray-1);
-  font-size: 11px;
-  font-weight: 500;
-  white-space: pre;
-  z-index: 10000;
-  margin-top: 5px;
-  line-height: 26px;
-  transform: translateX(0);
-}
-
-.theme-switch:hover:before,
-.theme-switch:hover:after {
-  display: block;
-}
-
 .theme-icon {
   mask: var(--icon-url) no-repeat;
   mask-size: 100% 100%;

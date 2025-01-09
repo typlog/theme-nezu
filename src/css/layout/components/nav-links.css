@@ -1,0 +1,123 @@
+ul.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0;
+  font-size: .95rem;
+  font-weight: 500;
+  white-space: nowrap;
+  border: none;
+  background-color: transparent;
+  color: var(--gray-a11);
+}
+
+.nav-links button > iconify-icon {
+  color: var(--gray-a9);
+}
+
+.nav-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: .95rem;
+  font-weight: 500;
+  white-space: nowrap;
+  text-decoration: none;
+  color: var(--gray-a11);
+}
+
+.nav-links button:hover,
+.nav-links a:hover {
+  color: var(--gray-12);
+}
+
+.nav-links a > iconify-icon {
+  font-size: 68%;
+  opacity: 0.6;
+  color: var(--gray-a9);
+}
+
+.nav-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links ul a {
+  display: block;
+  white-space: normal;
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+
+.nav-links ul a:hover {
+  color: var(--accent-9);
+  background: var(--gray-a2);
+}
+
+.nav-links ul small {
+  display: block;
+  color: var(--gray-a10);
+  margin-top: 0.25rem;
+  font-weight: 400;
+}
+
+@media (max-width: 767px) {
+  .nav-links .link {
+    margin: 1rem 0;
+  }
+
+  .nav-links .link iconify-icon {
+    display: none;
+  }
+
+  .nav-links .link > ul {
+    margin: 0.5rem 0 0.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .nav-links .link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 48px;
+  }
+
+  .nav-links .link > ul {
+    position: absolute;
+    height: 0;
+    visibility: hidden;
+    background-color: var(--background-color);
+    top: 48px;
+    padding: 0.825rem;
+    border-radius: 6px;
+    box-shadow:
+    0 0 0 1px var(--gray-a3),
+    0 2px 3px -2px var(--gray-a3),
+    0 3px 12px -4px rgba(0, 0, 0, 0.1),
+    0 4px 16px -8px rgba(0, 0, 0, 0.1);
+    z-index: 9;
+    max-width: 320px;
+    min-width: 200px;
+  }
+
+  .nav-links .link:hover > ul {
+    height: auto;
+    visibility: visible;
+  }
+
+  .nav-links .link > ul > li {
+    padding: 0.2rem 0;
+  }
+}

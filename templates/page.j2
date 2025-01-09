@@ -15,16 +15,7 @@
 {% endblock %}
 
 {% block body %}
-  <div class="absolute top-4 right-4">
-    {% include "./_partials/theme-switch.j2" %}
-  </div>
-  <div class="body">
-    {% include "./_partials/site-side.j2" %}
-    <div class="main">
-      <div class="inner main_mark" data-page-container>
-        {{ body }}
-      </div>
-    </div>
-  </div>
-  {% include "./_partials/site-foot.j2" %}
+  {% include "./_layouts/site-head.j2" %}
+  {{ body }}
+  {% include "./_layouts/site-foot.j2" %}
 {% endblock %}

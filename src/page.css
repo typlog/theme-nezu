@@ -1,11 +1,7 @@
-@import "./index.css";
-@import "./css/components/h-entry.css";
+@import "normalize.css";
+@import "./css/base.css";
+@import "./css/variables.css";
+@import "./css/layout.css";
+
 @import "./css/content/e-content.css";
-
-section[data-has-background="true"] {
-  border-radius: 1rem;
-}
-
-section[data-has-background="true"] + section[data-has-background="true"] {
-  margin-top: 1.625rem;
-}
+@import "./css/content/block-code.css";

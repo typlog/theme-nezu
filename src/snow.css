@@ -1,10 +1,11 @@
+@import "normalize.css";
 @import "./css/base.css";
 @import "./css/variables.css";
-@import "normalize.css";
-@import "./css/components/site-foot.css";
-@import "./css/components/share-buttons.css";
-@import "./css/components/enjoy-button.css";
-@import "./css/components/item.css";
+@import "./css/layout/site-foot.css";
+@import "./css/layout/entry-detail.css";
+@import "./css/partials/share-buttons.css";
+@import "./css/partials/enjoy-button.css";
+@import "./css/partials/item.css";
 @import "./css/content/e-content.css";
 @import "./css/content/embed.css";
 @import "./css/content/table.css";

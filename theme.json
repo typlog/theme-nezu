@@ -11,12 +11,46 @@
     "theme_color_mode": "auto",
     "theme_nav_links": [
       {
-        "title": "Blog",
-        "url": "/blog/"
+        "title": "Examples",
+        "url": "#",
+        "children": [
+          {
+            "title": "Blog",
+            "subtitle": "A blog example",
+            "url": "/blog/"
+          },
+          {
+            "title": "Podcast",
+            "subtitle": "A podcast example",
+            "url": "/podcast/"
+          }
+        ]
       },
       {
         "title": "GitHub",
         "url": "https://github.com/typlog/theme-ueno",
+        "blank": true
+      }
+    ],
+    "theme_nav_socials": [
+      {
+        "icon": "simple-icons:github",
+        "title": "GitHub",
+        "url": "https://github.com/typlog/theme-nezu",
+        "blank": true
+      }
+    ],
+    "theme_podcast_links": [
+      {
+        "icon": "simple-icons:applepodcasts",
+        "title": "Apple Podcasts",
+        "url": "https://podcasts.apple.com/us/podcast/typlog/id1564550000",
+        "blank": true
+      },
+      {
+        "icon": "simple-icons:spotify",
+        "title": "Spotify",
+        "url": "https://open.spotify.com/show/5Z6Z9Z6Z6Z6Z6Z6Z6Z6Z6Z",
         "blank": true
       }
     ],
@@ -41,6 +75,26 @@
         },
         "blank": {
           "type": "boolean"
+        },
+        "children": {
+          "type": "object[]",
+          "properties": {
+            "title": {
+              "type": "string",
+              "required": true
+            },
+            "subtitle": {
+              "type": "string",
+              "required": true
+            },
+            "url": {
+              "type": "string",
+              "required": true
+            },
+            "blank": {
+              "type": "boolean"
+            }
+          }
         }
       }
     },
@@ -63,7 +117,7 @@
         }
       }
     },
-    "social_links": {
+    "nav_socials": {
       "type": "object[]",
       "properties": {
         "icon": {

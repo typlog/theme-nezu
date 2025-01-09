@@ -14,6 +14,9 @@
 {% block body %}
   {% include "./_layouts/site-head.j2" %}
   <div class="container">
+    {% if column %}
+      {% include "./_partials/column-info.j2" %}
+    {% endif %}
     <article role="main" class="h-entry">
       <div class="entry-meta">
         {% if note.note_type == 'audio' %}

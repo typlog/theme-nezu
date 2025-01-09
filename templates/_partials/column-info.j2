@@ -9,7 +9,9 @@
     <h1>
       <a class="p-name u-url" href="{{ site.base_url }}{{ column.url }}">{{ podcast.title }}</a>
     </h1>
-    <h2>{{ podcast.subtitle }}</h2>
+    {% if podcast.subtitle %}
+      <h2>{{ podcast.subtitle }}</h2>
+    {% endif %}
     {% if theme_podcast_links %}
       <div class="podcast-links">
         {% for item in theme_podcast_links %}

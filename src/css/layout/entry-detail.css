@@ -1,6 +1,13 @@
+@import "./components/info-card.css";
+
 .h-entry {
-  padding-top: 8rem;
+  padding-top: 6rem;
   padding-bottom: 2rem;
+}
+
+.info-card + .h-entry {
+  padding-top: 3rem;
+  border-top: 1px solid var(--gray-a3);
 }
 
 .entry-meta {

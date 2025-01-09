@@ -12,11 +12,12 @@
 {% endblock %}
 
 {% block body %}
-  <div class="site-nav{% if note.cover and note.cover.src %} has-cover{% endif %}">
+  {%- set has_cover = note.cover and note.cover.src %}
+  <div class="site-nav{% if has_cover %} has-cover{% endif %}">
     <a class="site-link" href="/">{{ site.name }}</a>
   </div>
-  <article role="main" class="h-entry {{ note.note_type }}{% if note.cover and note.cover.src %} has-cover{% endif %}">
-    {% if note.cover and note.cover.src %}
+  <article role="main" class="h-entry {{ note.note_type }}{% if has_cover %} has-cover{% endif %}">
+    {% if has_cover %}
       <div class="entry-cover">
         <img class="u-photo" src="{{ note.cover|thumbnail }}" alt="{{ note.title }}">
       </div>
@@ -32,13 +33,7 @@
         {% endif %}
         <span class="item-label">{{ episode.audio.duration|durationformat }}</span>
       {% endif %}
-      {% if note.tags %}
-        <div class="entry-tags">
-          {% for tag in note.tags %}
-            <a class="p-category" href="{{ tag.url }}">{{ tag.title }}</a>
-          {% endfor %}
-        </div>
-      {% endif %}
+      {% include "./_partials/entry-tags.j2" %}
     </div>
     <div class="inner">
       <h1 class="p-name">{{ note.title }}</h1>
@@ -49,17 +44,8 @@
         {% include "./_partials/review.j2" %}
       {% endif %}
       <div class="e-content">
-        {% if note.note_type == 'audio' %}
-          {% set episode = note.audio %}
-          <div class="entry-audio js-audio">
-            <audio class="u-audio" src="{{ episode.audio.src }}" preload="none" controls
-                  data-title="{{ note.title }}"
-                  data-duration="{{ episode.audio.duration }}"
-                  {% if episode.image %}data-image="{{ episode.image }}"{% endif %}>
-            </audio>
-          </div>
-        {% endif %}
-        {{ note.content|safe }}
+        {% include "./_partials/entry-audio.j2" %}
+        {{ note.content }}
       </div>
     </div>
   </article>

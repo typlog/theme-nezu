@@ -1,0 +1,67 @@
+{% block styles %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700&display=swap">
+<link rel="stylesheet" href="{{ _static_url }}/bamboo.css">
+{% endblock %}
+
+{% block scripts %}
+<script src="https://code.iconify.design/iconify-icon/2.2.0/iconify-icon.min.js"></script>
+<script src="{{ _static_url }}/index.js" type="module"></script>
+{% include "./_partials/clipboard-copy.j2" %}
+{% endblock %}
+
+{% block body %}
+  {%- set has_cover = note.cover and note.cover.src %}
+  {% set has_cover = False %}
+  <div class="site-nav{% if has_cover %} has-cover{% endif %}">
+    <a class="site-link" href="/">{{ site.name }}</a>
+  </div>
+  <article role="main" class="h-entry
+    {%- if has_cover %} has-cover{% endif %}
+    {%- if note.review %} has-review{% endif %}">
+    {% if has_cover %}
+      <div class="entry-cover">
+        <img class="u-photo" src="{{ note.cover|thumbnail }}" alt="{{ note.title }}">
+        {% if note.review %}
+          <div class="entry-review">
+            {% include "./_partials/review.j2" %}
+          </div>
+        {% endif %}
+      </div>
+    {% elif note.review %}
+      <div class="entry-review">
+        {% include "./_partials/review.j2" %}
+      </div>
+    {% endif %}
+    <div class="inner">
+      <h1 class="p-name">{{ note.title }}</h1>
+      {% if note.subtitle %}
+        <h2 class="p-summary">{{ note.subtitle }}</h2>
+      {% endif %}
+      <div class="e-content">
+        {% include "./_partials/entry-audio.j2" %}
+        {{ note.content }}
+      </div>
+      <div class="entry-meta">
+        <time class="dt-published" datetime="{{ note.published_at|xmldatetime }}">
+          <a class="u-url" href="{{ note.url }}">{{ note.published_at|dateformat('%b %d, %Y') }}</a>
+        </time>
+        {% include "./_partials/entry-tags.j2" %}
+      </div>
+    </div>
+  </article>
+  <div class="inner">
+    <div class="entry-actions">
+      {% include "./_partials/enjoy-button.j2" %}
+      {% include "./_partials/share-buttons.j2" %}
+    </div>
+    {% include "./_partials/previous-entry.j2" %}
+  </div>
+  <section class="entry-comments">
+    <div class="inner">
+      {% include "components/web-comment.j2" %}
+    </div>
+  </section>
+  {% include "./_layouts/site-foot.j2" %}
+{% endblock %}

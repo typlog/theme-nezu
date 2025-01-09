@@ -38,25 +38,10 @@
         {% include "./_partials/review.j2" %}
       {% endif %}
       <div class="e-content">
-        {% if note.note_type == 'audio' %}
-          {% set episode = note.audio %}
-          <div class="entry-audio js-audio">
-            <audio class="u-audio" src="{{ episode.audio.src }}" preload="none" controls
-                  data-title="{{ note.title }}"
-                  data-duration="{{ episode.audio.duration }}"
-                  {% if episode.image %}data-image="{{ episode.image }}"{% endif %}>
-            </audio>
-          </div>
-        {% endif %}
-        {{ note.content|safe }}
+        {% include "./_partials/entry-audio.j2" %}
+        {{ note.content }}
       </div>
-      {% if note.tags %}
-        <div class="entry-tags">
-          {% for tag in note.tags %}
-            <a class="p-category" href="{{ tag.url }}">{{ tag.title }}</a>
-          {% endfor %}
-        </div>
-      {% endif %}
+      {% include "./_partials/entry-tags.j2" %}
     </article>
     <div class="entry-actions">
       {% include "./_partials/enjoy-button.j2" %}

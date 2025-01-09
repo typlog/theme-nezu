@@ -1,0 +1,242 @@
+@import "normalize.css";
+@import "./css/base.css";
+@import "./css/variables.css";
+@import "./css/layout/site-foot.css";
+
+@import "./css/partials/item-label.css";
+@import "./css/partials/entry-actions.css";
+@import "./css/partials/share-buttons.css";
+@import "./css/partials/enjoy-button.css";
+@import "./css/partials/previous-entry.css";
+@import "./css/partials/entry-comments.css";
+@import "./css/partials/clipboard-copy.css";
+
+@import "./css/content/e-content.css";
+@import "./css/content/table.css";
+@import "./css/content/admonition.css";
+@import "./css/content/block-code.css";
+
+.site-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 24px 20px;
+  box-sizing: border-box;
+  z-index: 9;
+}
+
+.site-nav.has-cover {
+  padding-bottom: 40px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+}
+
+.site-link {
+  font-family: "Avenir Next", var(--font-text);
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 900;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.98);
+  transition: all 0.2s ease;
+}
+
+.has-cover .site-link {
+  color: rgba(255, 255, 255, 0.98);
+}
+
+.has-cover .site-link:hover {
+  opacity: 0.8;
+}
+
+.entry-cover {
+  position: relative;
+  margin: 0 0 20px;
+}
+
+.entry-cover img.u-photo {
+  padding: 0;
+  width: 100%;
+  height: 60vw;
+  min-height: 480px;
+  max-height: 80vh;
+  object-fit: cover;
+}
+
+.inner {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 760px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.h-entry {
+  font: 400 18px/1.62 var(--font-text), sans-serif;
+  padding-top: 140px;
+  padding-bottom: 30px;
+  overflow: hidden;
+}
+
+.h-entry.has-cover {
+  padding-top: 0;
+}
+
+.review {
+  display: flex;
+  background-color: var(--gray-a2);
+  padding: 0.825rem;
+  box-sizing: border-box;
+}
+
+.review img {
+  object-fit: cover;
+  min-height: 100px;
+  min-width: 100px;
+  margin: 0;
+  width: auto;
+}
+
+.review h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.review-item {
+  padding: 1.25rem;
+}
+
+.review-rating {
+  margin-bottom: 0.825rem;
+}
+
+.review-item-author {
+  font-size: 0.875rem;
+  color: var(--gray-a10);
+  margin-bottom: 0.25rem;
+}
+
+.review-item-description {
+  font-size: 0.925rem;
+  color: var(--gray-a11);
+  line-height: 1.42;
+}
+
+.h-entry > .entry-review {
+  margin-bottom: 4rem;
+}
+
+.h-entry > .entry-review .review {
+  border-radius: 6px;
+}
+
+.entry-cover .entry-review {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.entry-cover .review {
+  background-color: #ffffffdb;
+  padding: 0;
+}
+
+@media (min-width: 640px) {
+  .review {
+    max-width: 480px;
+    margin-inline: auto;
+  }
+  .entry-cover .review {
+    margin-bottom: 4rem;
+    border-radius: 2px;
+    box-shadow: 1px 1px 10px #0003;
+  }
+}
+
+
+
+h1.p-name {
+  line-height: 1.2;
+  font-size: 1.6em;
+  margin-top: 0.42em;
+  margin-bottom: 0.64em;
+  padding: 0 18px;
+  text-align: center;
+  font-family: "Droid Serif", var(--font-text);
+}
+
+h2.p-summary {
+  color: var(--gray-a10);
+  font-size: 1.12em;
+  font-weight: 300;
+  line-height: 1.2;
+  text-align: center;
+  max-width: 480px;
+  margin-inline: auto;
+}
+
+h1.p-name:before,
+h2.p-summary:after {
+  display: block;
+  content: '';
+  width: 90%;
+  height: 0;
+  max-width: 60px;
+  margin: 2em auto;
+  border-bottom: 1px solid var(--gray-a3);
+}
+
+h1.p-name:before {
+  display: none;
+}
+
+.has-cover h1.p-name:before,
+.has-review h1.p-summary:before {
+  display: block;
+}
+
+.e-content {
+  font-family: "Droid Serif", var(--font-text);
+  margin-top: 1.64em;
+  color: rgba(0, 0, 0, 0.86);
+}
+
+.entry-meta {
+  font-family: var(--font-text);
+  vertical-align: middle;
+  color: var(--gray-a10);
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.entry-meta a {
+  text-decoration: none;
+  color: var(--gray-a10);
+  font-weight: 700;
+}
+
+time.dt-published {
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.entry-tags {
+  display: inline-block;
+  margin: 0 0 0 1em;
+  vertical-align: middle;
+}
+
+.entry-tags a {
+  text-decoration: none;
+  color: var(--accent-9);
+}
+.entry-tags a:before {
+  content: '#';
+}
+.entry-tags a:hover {
+  text-decoration: underline;
+}

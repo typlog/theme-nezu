@@ -2,15 +2,21 @@
 @import "./css/base.css";
 @import "./css/variables.css";
 @import "./css/layout/site-foot.css";
-@import "./css/layout/entry-detail.css";
+
+@import "./css/partials/review.css";
+@import "./css/partials/item-label.css";
+@import "./css/partials/entry-actions.css";
 @import "./css/partials/share-buttons.css";
 @import "./css/partials/enjoy-button.css";
-@import "./css/partials/item.css";
+@import "./css/partials/previous-entry.css";
+@import "./css/partials/entry-comments.css";
+@import "./css/partials/clipboard-copy.css";
+
 @import "./css/content/e-content.css";
-@import "./css/content/embed.css";
 @import "./css/content/table.css";
 @import "./css/content/admonition.css";
 @import "./css/content/block-code.css";
+
 
 .site-nav {
   position: absolute;
@@ -184,22 +190,19 @@ h2.p-summary {
   background: var(--accent-a2);
 }
 
-.entry-share a {
+.share-buttons a {
   border-radius: 50%;
   line-height: 34px;
 }
 
-.entry-enjoy button {
+.enjoy-button button {
   border-radius: 30px;
 }
 
-.entry-section {
-  border-top: 1px solid var(--gray-a4);
-}
-
-.entry-section.comment {
+.entry-comments {
   padding: 30px 0;
   background-color: var(--gray-a2);
+  border-top: 1px solid var(--gray-a4);
 }
 
 /* reset styles */

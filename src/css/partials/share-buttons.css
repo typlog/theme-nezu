@@ -1,4 +1,4 @@
-.entry-share a {
+.share-buttons a {
   display: inline-flex;
   width: 36px;
   height: 36px;
@@ -11,26 +11,26 @@
   transition: all 0.2s ease;
 }
 
-.entry-share a:hover {
+.share-buttons a:hover {
   color: white;
   background: var(--icon-color);
 }
-.entry-share a[data-type="weibo"] {
+.share-buttons a[data-type="weibo"] {
   --icon-color: #e24040;
 }
-.entry-share a[data-type="bluesky"] {
+.share-buttons a[data-type="bluesky"] {
   --icon-color: #0085ff;
 }
-.entry-share a[data-type="x"] {
+.share-buttons a[data-type="x"] {
   --icon-color: #000;
 }
-.entry-share a[data-type="telegram"] {
+.share-buttons a[data-type="telegram"] {
   --icon-color: #179cde;
 }
-.entry-share a[data-type="wechat"] {
+.share-buttons a[data-type="wechat"] {
   --icon-color: #20b767;
 }
-.entry-share a[data-type="facebook"] {
+.share-buttons a[data-type="facebook"] {
   --icon-color: #1877F2;
 }
 

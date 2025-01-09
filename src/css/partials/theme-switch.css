@@ -1,4 +1,6 @@
 button.theme-switch {
+  display: flex;
+  align-items: center;
   position: relative;
   background-color: transparent;
   padding: 0;

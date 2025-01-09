@@ -8,7 +8,7 @@
 {% block scripts %}
 <script src="https://code.iconify.design/iconify-icon/2.2.0/iconify-icon.min.js"></script>
 <script src="{{ _static_url }}/index.js" type="module"></script>
-{% include "./_partials/copy-code.j2" %}
+{% include "./_partials/clipboard-copy.j2" %}
 {% endblock %}
 
 {% block body %}
@@ -67,20 +67,7 @@
             {% include "./_partials/share-buttons.j2" %}
           </div>
         </article>
-        {% set prev_note = query.previous_note(note.published_at) %}
-        {% if prev_note %}
-          <section class="entry-section prev-subject">
-            <h2>{{ translate('readthis') }}</h2>
-            <div class="item" lang="{{ prev_note.lang }}">
-              <a class="item-main" href="{{ prev_note.url }}">
-                <h3>{{ prev_note.title }}</h3>
-                {% if prev_note.subtitle %}
-                <div class="item-subtitle">{{ prev_note.subtitle }}</div>
-                {% endif %}
-              </a>
-            </div>
-          </section>
-        {% endif %}
+        {% include "./_partials/previous-entry.j2" %}
         <section class="entry-comments">
           {% include "components/web-comment.j2" %}
         </section>

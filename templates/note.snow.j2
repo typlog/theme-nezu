@@ -8,7 +8,7 @@
 {% block scripts %}
 <script src="https://code.iconify.design/iconify-icon/2.2.0/iconify-icon.min.js"></script>
 <script src="{{ _static_url }}/index.js" type="module"></script>
-{% include "./_partials/copy-code.j2" %}
+{% include "./_partials/clipboard-copy.j2" %}
 {% endblock %}
 
 {% block body %}
@@ -22,16 +22,15 @@
       </div>
     {% endif %}
     <div class="entry-meta inner">
+      {% if note.published_at %}
+        <time class="dt-published" datetime="{{ note.published_at|xmldatetime }}">{{ note.published_at|dateformat('%b %d, %Y') }}</time>
+      {% endif %}
       {% if note.note_type == 'audio' %}
         {% set episode = note.audio %}
         {% if episode.season and episode.episode %}
           <span class="item-label">S{{ episode.season }}E{{ episode.episode }}</span>
         {% endif %}
         <span class="item-label">{{ episode.audio.duration|durationformat }}</span>
-      {% endif %}
-      {% if note.published_at %}
-        <time class="dt-published" datetime="{{ note.published_at|xmldatetime }}"
-              itemprop="datePublished">{{ note.published_at|dateformat('%b %d, %Y') }}</time>
       {% endif %}
       {% if note.tags %}
         <div class="entry-tags">
@@ -42,14 +41,14 @@
       {% endif %}
     </div>
     <div class="inner">
-      <h1 class="p-name" itemprop="headline">{{ note.title }}</h1>
+      <h1 class="p-name">{{ note.title }}</h1>
       {% if note.subtitle %}
         <h2 class="p-summary">{{ note.subtitle }}</h2>
       {% endif %}
       {% if note.review %}
         {% include "./_partials/review.j2" %}
       {% endif %}
-      <div class="e-content" itemprop="articleBody">
+      <div class="e-content">
         {% if note.note_type == 'audio' %}
           {% set episode = note.audio %}
           <div class="entry-audio js-audio">
@@ -66,25 +65,10 @@
   </article>
   <div class="inner">
     <div class="flex justify-between items-center mb-4">
-      <div class="entry-enjoy">
-        <button class="enjoy js-enjoy">Enjoy</button>
-      </div>
+      {% include "./_partials/enjoy-button.j2" %}
       {% include "./_partials/share-buttons.j2" %}
     </div>
-    {% set prev_note = query.previous_note(note.published_at) %}
-    {% if prev_note %}
-      <section class="entry-section">
-        <h2>{{ translate('readthis') }}</h2>
-        <div class="item" lang="{{ prev_note.lang }}">
-          <a class="item-main" href="{{ prev_note.url }}">
-            <h3>{{ prev_note.title }}</h3>
-            {% if prev_note.subtitle %}
-            <div class="item-subtitle">{{ prev_note.subtitle }}</div>
-            {% endif %}
-          </a>
-        </div>
-      </section>
-    {% endif %}
+    {% include "./_partials/previous-entry.j2" %}
   </div>
   <section class="entry-section comment">
     <div class="inner">

@@ -1,5 +1,9 @@
 .e-content {
   font-family: merriweather, var(--font-serif), var(--font-cjk), serif;
+  font-size: 18px;
+  line-height: 1.62;
+  margin-top: 2em;
+  margin-bottom: 3em;
 }
 
 :where(.e-content) > div {

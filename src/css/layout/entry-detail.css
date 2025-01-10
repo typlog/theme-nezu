@@ -27,3 +27,11 @@ time.dt-published {
   text-transform: uppercase;
   vertical-align: middle;
 }
+
+h2.p-summary {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--gray-10);
+}

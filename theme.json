@@ -84,8 +84,7 @@
               "required": true
             },
             "subtitle": {
-              "type": "string",
-              "required": true
+              "type": "string"
             },
             "url": {
               "type": "string",

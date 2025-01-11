@@ -1,3 +1,3 @@
-# UENO
+# NEZU
 
-A two columns theme for blogs and podcasts.
+A single column theme for blogs and podcasts.

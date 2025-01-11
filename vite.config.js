@@ -11,8 +11,8 @@ export default defineConfig({
       entry: [
         'src/index.js',
         'src/index.css',
-        'src/note.css',
-        'src/snow.css',
+        'src/content.css',
+        'src/page.css',
       ],
       formats: ['es'],
       fileName: (_, name) => `${name}.js`,

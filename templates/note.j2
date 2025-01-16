@@ -14,9 +14,6 @@
 {% block body %}
   {% include "./_layouts/site-head.j2" %}
   <div class="container">
-    {% if column %}
-      {% include "./_partials/column-info.j2" %}
-    {% endif %}
     <article role="main" class="h-entry">
       <div class="entry-meta">
         {% if note.note_type == 'audio' %}
@@ -28,6 +25,9 @@
         {% endif %}
         {% if note.published_at %}
           <time class="dt-published" datetime="{{ note.published_at|xmldatetime }}">{{ note.published_at|dateformat('%b %d, %Y') }}</time>
+        {% endif %}
+        {% if column %}
+          <a class="column" href="{{ column.url }}">{{ column.title }}</a>
         {% endif %}
       </div>
       <h1 class="p-name">{{ note.title }}</h1>

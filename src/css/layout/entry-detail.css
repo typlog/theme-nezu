@@ -11,21 +11,31 @@
 }
 
 .entry-meta {
-  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   color: var(--gray-9);
   font-size: 14px;
   margin-bottom: 10px;
 }
 
-.entry-meta a {
+.entry-meta .column {
+  padding: 4px 10px;
+  border-radius: 30px;
   text-decoration: none;
-  color: var(--gray-10);
-  font-weight: 700;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--gray-a10);
+  background-color: var(--gray-a3);
+}
+
+.entry-meta .column:hover {
+  color: var(--accent-a10);
+  background-color: var(--accent-a3);
 }
 
 time.dt-published {
   text-transform: uppercase;
-  vertical-align: middle;
 }
 
 h2.p-summary {

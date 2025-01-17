@@ -5,13 +5,14 @@
 {% block scripts %}
 <script src="https://code.iconify.design/iconify-icon/2.2.0/iconify-icon.min.js"></script>
 <script src="{{ _static_url }}/index.js" type="module"></script>
+{% include "components/lightbox.j2" %}
 {% endblock %}
 
 {% block body %}
   {% include "./_layouts/site-head.j2" %}
   <div class="container">
     {% include "./_partials/column-info.j2" %}
-    <div class="entry-list">
+    <div class="entry-list js-lightbox">
       {% if pagination.items %}
         {% for note in pagination.items %}
           {% include "./_partials/entry-item.j2" %}

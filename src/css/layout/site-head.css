@@ -3,6 +3,7 @@
 @import "./components/theme-switch.css";
 @import "./components/hamburger.css";
 @import "./components/aria-tip.css";
+@import "./components/docsearch.css";
 
 .site-head {
   position: sticky;
@@ -74,10 +75,8 @@
     display: flex;
   }
 
-  .site-head_extra {
-    flex-direction: column;
-    padding: 2rem 0 1rem;
-    width: 100%;
+  .site-head_actions .nav-socials {
+    display: none;
   }
 }
 
@@ -92,6 +91,10 @@
     align-items: center;
     justify-content: space-between;
     padding-left: 2rem;
+  }
+
+  .site-head_nav .nav-socials {
+    display: none;
   }
 
   .site-head_links {

@@ -9,12 +9,11 @@
           {% include "./components/nav-links.j2" %}
         {%- endif -%}
       </nav>
-      <div class="site-head_extra">
-        {% include "./components/searchbox.j2" %}
-        {% include "./components/nav-socials.j2" %}
-      </div>
+      {% include "./components/nav-socials.j2" %}
     </div>
     <div class="site-head_actions">
+      {% include "./components/searchbox.j2" %}
+      {% include "./components/nav-socials.j2" %}
       {% include "./components/theme-switch.j2" %}
       {% include "./components/hamburger.j2" %}
     </div>

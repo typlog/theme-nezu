@@ -12,24 +12,26 @@
     "theme_nav_links": [
       {
         "title": "Examples",
-        "url": "#",
+        "link": "#",
         "children": [
           {
+            "icon": "logos:amp-icon",
             "title": "Blog",
             "subtitle": "A blog example",
-            "url": "/blog/"
+            "link": "/blog/"
           },
           {
+            "icon": "lucide:podcast",
             "title": "Podcast",
             "subtitle": "A podcast example",
-            "url": "/podcast/"
+            "link": "/podcast/"
           }
         ]
       },
       {
         "title": "GitHub",
-        "url": "https://github.com/typlog/theme-ueno",
-        "blank": true
+        "link": "https://github.com/typlog/theme-ueno",
+        "new_tab": true
       }
     ],
     "theme_nav_socials": [
@@ -56,90 +58,38 @@
     ],
     "theme_copyright": "Copy &copy; 2024, <a href='https://typlog.com/'>Typlog</a>"
   },
-  "variables": {
-    "color_mode": {
+  "config": [
+    {
+      "name": "color_mode",
       "type": "enum",
       "default": "auto",
-      "choices": ["auto", "light", "dark"]
-    },
-    "nav_links": {
-      "type": "object[]",
-      "properties": {
-        "title": {
-          "type": "string",
-          "required": true
-        },
-        "url": {
-          "type": "string",
-          "required": true
-        },
-        "blank": {
-          "type": "boolean"
-        },
-        "children": {
-          "type": "object[]",
-          "properties": {
-            "title": {
-              "type": "string",
-              "required": true
-            },
-            "subtitle": {
-              "type": "string"
-            },
-            "url": {
-              "type": "string",
-              "required": true
-            },
-            "blank": {
-              "type": "boolean"
-            }
-          }
-        }
+      "options": {
+        "choices": ["auto", "light", "dark"]
       }
     },
-    "podcast_links": {
-      "type": "object[]",
-      "properties": {
-        "icon": {
-          "type": "icon"
-        },
-        "title": {
-          "type": "string",
-          "required": true
-        },
-        "url": {
-          "type": "url",
-          "required": true
-        },
-        "blank": {
-          "type": "boolean"
-        }
-      }
-    },
-    "nav_socials": {
-      "type": "object[]",
-      "properties": {
-        "icon": {
-          "type": "icon",
-          "required": true
-        },
-        "title": {
-          "type": "string",
-          "required": true
-        },
-        "url": {
-          "type": "url",
-          "required": true
-        },
-        "blank": {
-          "type": "boolean"
-        }
-      }
-    },
-    "copyright": {
+    {
+      "name": "copyright",
       "type": "string"
+    },
+    {
+      "name": "nav_links",
+      "type": "NavLink",
+      "multiple": true,
+      "options": {
+        "children": true
+      }
+    },
+    {
+      "name": "podcast_links",
+      "type": "IconLink",
+      "multiple": true
+    },
+    {
+      "name": "nav_socials",
+      "type": "IconLink",
+      "multiple": true
     }
-  },
+  ],
   "messages": {
     "none": "There is no items",
     "none#zh": "没有内容",

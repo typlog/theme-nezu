@@ -1,9 +1,13 @@
-.site-foot,
-.site-copyright {
+.site-foot {
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
   border-top: 1px solid var(--gray-a4);
 }
+
+.site-foot.has-foot-links {
+  background-color: var(--gray-1);
+}
+
 .site-foot_content {
   display: flex;
   justify-content: space-between;
@@ -51,26 +55,94 @@
   vertical-align: middle;
 }
 
-.site-copyright_content {
+.site-foot_copyright {
+  border-top: 1px solid var(--gray-a4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 1rem;
   color: var(--gray-10);
   font-size: 0.875rem;
   font-weight: 500;
 }
 
-.site-copyright a {
+.site-foot_copyright a {
   text-decoration: none;
   color: inherit;
 }
 
-.site-copyright a:hover {
+
+.site-foot_copyright a:hover {
   text-decoration: underline;
+}
+
+.site-foot_copyright .icon-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.25rem;
+}
+
+.site-foot_copyright .icon-links a:hover {
+  color: var(--gray-12);
+}
+
+.has-foot-links .site-foot_copyright{
+  border-top: 0;
+}
+
+.has-foot-links .site-foot_content {
+  align-items: flex-start;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.has-foot-links .site-foot_links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.section-links {
+  min-width: 200px;
+}
+
+.section-links > h1 {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--gray-11);
+}
+
+.section-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.875rem 0;
+}
+
+.section-links li {
+  padding: 0.25rem 0;
+}
+
+.section-links a {
+  padding: 0;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.section-links a:hover {
+  color: var(--accent-9);
 }
 
 @media (max-width: 680px) {
   .site-foot_content {
     flex-direction: column;
     gap: 20px;
+    align-items: flex-start;
   }
 
   .site-foot_links a {
@@ -78,5 +150,9 @@
     border: 0;
     border-bottom: 2px solid transparent;
     border-radius: 0;
+  }
+
+  .has-foot-links .site-foot_links {
+    width: 100%;
   }
 }

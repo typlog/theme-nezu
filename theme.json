@@ -34,26 +34,28 @@
         "new_tab": true
       }
     ],
-    "theme_nav_socials": [
+    "theme_social_links": [
       {
-        "icon": "simple-icons:github",
+        "icon": "logos:github-icon",
         "title": "GitHub",
-        "url": "https://github.com/typlog/theme-nezu",
-        "blank": true
+        "link": "https://github.com/typlog/theme-nezu"
+      },
+      {
+        "icon": "logos:bluesky",
+        "title": "Bluesky",
+        "link": "https://bsky.app/profile/typlog.com"
       }
     ],
     "theme_podcast_links": [
       {
         "icon": "simple-icons:applepodcasts",
         "title": "Apple Podcasts",
-        "url": "https://podcasts.apple.com/us/podcast/typlog/id1564550000",
-        "blank": true
+        "link": "https://podcasts.apple.com/us/podcast/typlog/id1564550000"
       },
       {
         "icon": "simple-icons:spotify",
         "title": "Spotify",
-        "url": "https://open.spotify.com/show/5Z6Z9Z6Z6Z6Z6Z6Z6Z6Z6Z",
-        "blank": true
+        "link": "https://open.spotify.com/show/5Z6Z9Z6Z6Z6Z6Z6Z6Z6Z6Z"
       }
     ],
     "theme_copyright": "Copy &copy; 2024, <a href='https://typlog.com/'>Typlog</a>"
@@ -85,8 +87,13 @@
       "multiple": true
     },
     {
-      "name": "nav_socials",
+      "name": "social_links",
       "type": "IconLink",
+      "multiple": true
+    },
+    {
+      "name": "foot_links",
+      "type": "SectionLinks",
       "multiple": true
     }
   ],

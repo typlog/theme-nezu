@@ -15,7 +15,7 @@
 
   45% {
     transform: scale(1.5);
-    opacity: .6;;
+    opacity: .6;
   }
   100% {
     transform: scale(.75);
@@ -59,6 +59,7 @@
   cursor: pointer;
   outline: initial;
 }
+
 .enjoy-button button:after {
   content: "\2665";
   user-select: none;
@@ -76,9 +77,11 @@
   opacity: 0;
   color: var(--accent-9);
 }
+
 .enjoy-button button:hover:after {
   animation: heartbeat 1s infinite;
 }
+
 .enjoy-button button:disabled {
   border-color: var(--accent-9);
   background-color: var(--accent-9);
@@ -89,6 +92,7 @@
   transition-duration: 0.5s, 0s;
 
 }
+
 .enjoy-button button:disabled:after {
   animation: scale-up 2s;
 }

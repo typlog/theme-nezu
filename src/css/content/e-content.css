@@ -2,8 +2,8 @@
   font-family: merriweather, var(--system-serif), var(--system-cjk), serif;
   font-size: 18px;
   line-height: 1.62;
-  margin-top: 2em;
-  margin-bottom: 3em;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
 }
 
 :where(.e-content) > div {
@@ -22,29 +22,31 @@
 
 .e-content h1 {
   font-weight: 700;
-  font-size: 1.8em;
-  margin: 0 0 3em;
+  font-size: 1.8rem;
+  margin: 0 0 3rem;
 }
 
 .e-content h2 {
   font-weight: 700;
-  font-size: 1.42em;
-  margin-top: 1.6em;
-  margin-bottom: 1.2em;
+  font-size: 1.42rem;
+  margin-top: 1.6rem;
+  margin-bottom: 1.2rem;
 }
 
 .e-content h3 {
-  font-size: 1.17em;
-  margin-top: 1.4em;
-  margin-bottom: 0.9em;
+  font-weight: 500;
+  font-size: 1.17rem;
+  margin-top: 1.4rem;
+  margin-bottom: 0.8rem;
 }
 
 .e-content h4,
 .e-content h5,
 .e-content h6 {
-  font-size: 1em;
-  margin-top: 1.4em;
-  margin-bottom: 0.8em;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-top: 1.4rem;
+  margin-bottom: 0.8rem;
 }
 
 .e-content h6 {
@@ -53,7 +55,7 @@
 
 .e-content p {
   margin-top: 0;
-  margin-bottom: 1.12em;
+  margin-bottom: 1.12rem;
   hyphens: auto;
 }
 
@@ -95,7 +97,7 @@
 }
 
 .e-content del {
-  color: var(--gray-10);
+  color: var(--gray-11);
   text-decoration: line-through;
   text-decoration-color: var(--accent-9);
 }
@@ -128,14 +130,14 @@
   max-width: 100px;
   border: 0;
   border-top: 5px solid var(--gray-a3);
-  margin: 2.4em auto;
+  margin: 2.4rem auto;
 }
 
 .e-content blockquote {
   position: relative;
-  margin: 0 0 1.64em 0;
-  padding: 34px 1em 0.1em 20px;
-  font-size: 1.12em;
+  margin: 0 0 1.64rem 0;
+  padding: 34px 1rem 0.1rem 20px;
+  font-size: 1.12rem;
   border-left: 4px solid var(--accent-9);
 }
 .e-content blockquote::before {
@@ -153,8 +155,20 @@
   padding-left: 16px;
 }
 
+.e-content ul {
+  list-style-type: disc;
+}
+
+.e-content ol {
+  list-style-type: decimal;
+}
+
 .e-content li {
-  margin-bottom: 0.2em;
+  margin-bottom: 0.2rem;
+}
+
+.e-content li::marker {
+  color: var(--gray-10);
 }
 
 .e-content li ul,
@@ -164,13 +178,13 @@
 }
 
 .e-content li p {
-  margin: 0.4em 0 0.6em;
+  margin: 0.4rem 0 0.6rem;
 }
 
 .e-content li > code,
 .e-content p > code,
 .e-content p > tt {
-  font-size: 0.86em;
+  font-size: 0.86rem;
   font-family: var(--code-font);
   font-weight: 600;
   padding: 1px 3px;
@@ -185,7 +199,7 @@
 .e-content iframe {
   display: block;
   max-width: 100%;
-  margin-bottom: 1.5em;
+  margin-bottom: 1.5rem;
 }
 
 .e-content figure iframe {

@@ -10,11 +10,12 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.1.8",
     "@typlog/theme-dev-plugin": "*",
     "vite": "^6.0.0"
   },
   "dependencies": {
     "@radix-ui/colors": "^3.0.0",
-    "normalize.css": "^8.0.1"
+    "tailwindcss": "^4.0.0"
   }
 }

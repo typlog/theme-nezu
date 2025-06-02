@@ -32,6 +32,7 @@
 
 .item time {
   color: var(--gray-10);
+  font-family: var(--sans-font);
   font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;

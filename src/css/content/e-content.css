@@ -185,7 +185,7 @@
 .e-content p > code,
 .e-content p > tt {
   font-size: 0.86rem;
-  font-family: var(--code-font);
+  font-family: var(--default-mono-font-family);
   font-weight: 600;
   padding: 1px 3px;
   word-wrap: break-word;
@@ -193,7 +193,7 @@
 }
 
 .e-content pre {
-  font-family: var(--code-font);
+  font-family: var(--default-mono-font-family);
 }
 
 .e-content iframe {

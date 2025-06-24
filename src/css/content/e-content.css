@@ -16,7 +16,6 @@
 .e-content h4,
 .e-content h5,
 .e-content h6 {
-  font-family: var(--heading-font);
   color: var(--heading-color);
 }
 

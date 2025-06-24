@@ -5,11 +5,11 @@ function toggleMenu(button) {
   button.addEventListener('click', function () {
     if (document.body.hasAttribute(expanded)) {
       document.body.removeAttribute(expanded)
-      ctrl.classList.remove('_expanded')
+      ctrl.setAttribute('aria-hidden', 'true')
       setButtonExpanded(id, 'false')
     } else {
       document.body.setAttribute(expanded, "true")
-      ctrl.classList.add('_expanded')
+      ctrl.setAttribute('aria-hidden', 'false')
       setButtonExpanded(id, 'true')
     }
   })
@@ -22,7 +22,7 @@ function setButtonExpanded(id, value) {
   }
 }
 
-const menuButtons = document.querySelectorAll('.js-menu')
+const menuButtons = document.querySelectorAll('button[aria-controls]')
 for (let i = 0; i < menuButtons.length; i++) {
   toggleMenu(menuButtons[i])
 }

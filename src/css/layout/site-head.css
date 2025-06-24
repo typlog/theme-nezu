@@ -12,14 +12,17 @@
   background-color: var(--background-color);
   padding-block: 0.5rem;
   box-shadow: 0 1px 0 0 var(--gray-a3);
+  padding-left: max(env(safe-area-inset-right), 1.5rem);
+  padding-right: max(env(safe-area-inset-right), 1rem);
 }
 
 .site-head_content {
   display: flex;
-  padding-left: max(env(safe-area-inset-right), 1.5rem);
-  padding-right: max(env(safe-area-inset-right), 1rem);
   justify-content: space-between;
   align-items: center;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .site-head_brand {
@@ -86,7 +89,7 @@
 }
 
 @media (min-width: 768px) {
-  .site-head_content {
+  .site-head {
     padding-right: max(env(safe-area-inset-right), 1.5rem);
   }
 

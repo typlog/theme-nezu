@@ -17,3 +17,10 @@
   --heading-color: #fff;
   --background-color: #212328;
 }
+
+.ui-root [data-section] {
+  --section-inner-max-width: 1400px;
+  --section-padding-inline-xs: 1.5rem;
+  --section-padding-inline-start: 1.5rem;
+  --section-padding-inline-end: 1.5rem;
+}

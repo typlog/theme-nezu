@@ -16,7 +16,7 @@ a && (a.addEventListener("click", b), g(s[p()] || "auto"));
 function f(t) {
   const e = t.getAttribute("aria-controls"), o = document.getElementById(e), n = "data-expanded-" + e;
   t.addEventListener("click", function() {
-    document.body.hasAttribute(n) ? (document.body.removeAttribute(n), o.classList.remove("_expanded"), l(e, "false")) : (document.body.setAttribute(n, "true"), o.classList.add("_expanded"), l(e, "true"));
+    document.body.hasAttribute(n) ? (document.body.removeAttribute(n), o.setAttribute("aria-hidden", "true"), l(e, "false")) : (document.body.setAttribute(n, "true"), o.setAttribute("aria-hidden", "false"), l(e, "true"));
   });
 }
 function l(t, e) {
@@ -24,10 +24,10 @@ function l(t, e) {
   for (let n = 0; n < o.length; n++)
     o[n].setAttribute("aria-expanded", e);
 }
-const d = document.querySelectorAll(".js-menu");
-for (let t = 0; t < d.length; t++)
-  f(d[t]);
-const u = document.querySelectorAll("time.dt-published"), w = document.documentElement.lang;
+const u = document.querySelectorAll("button[aria-controls]");
+for (let t = 0; t < u.length; t++)
+  f(u[t]);
+const d = document.querySelectorAll("time.dt-published"), w = document.documentElement.lang;
 function v(t) {
   const e = t.getAttribute("datetime"), o = new Date(e), n = Intl.DateTimeFormat(w, {
     year: "numeric",
@@ -36,8 +36,8 @@ function v(t) {
   });
   t.textContent = n.format(o);
 }
-for (let t = 0; t < u.length; t++)
-  v(u[t]);
+for (let t = 0; t < d.length; t++)
+  v(d[t]);
 function h(t) {
   let e = t.getAttribute("data-src");
   e || (e = t.getAttribute("data-cover"));
@@ -68,7 +68,7 @@ const y = {
   weibo: "http://service.weibo.com/share/share.php?title={t}&url={u}",
   telegram: "https://telegram.me/share/url?text={t}&url={u}"
 }, A = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1" d="M18 6L6 18M6 6l12 12"></path></svg>';
-function x(t) {
+function k(t) {
   let e = document.querySelector("#wechat-share");
   if (e)
     return e.classList.add("show");
@@ -82,18 +82,17 @@ function x(t) {
     n.innerHTML = "<h3>扫描二维码分享到微信</h3>" + r(t);
   }), document.body.appendChild(e);
 }
-function k(t) {
+function x(t) {
   const e = document.querySelector('meta[property="og:title"]').getAttribute("content"), o = document.querySelector('link[rel="canonical"]').getAttribute("href");
   t.addEventListener("click", function(n) {
     n.preventDefault();
     const r = t.getAttribute("data-type");
     if (r === "wechat")
-      return x(o);
+      return k(o);
     let i = y[r];
     r === "bluesky" ? i = i.replace("{t}", encodeURIComponent(e + " " + o)) : i = i.replace("{t}", encodeURIComponent(e)).replace("{u}", encodeURIComponent(o)), window.open(i, "_blank", "width=615,height=505");
   });
 }
 const m = document.querySelectorAll("a.js-share");
 for (let t = 0; t < m.length; t++)
-  k(m[t]);
-/windows/i.test(navigator.userAgent) && document.body.classList.add("win");
+  x(m[t]);

@@ -5,12 +5,14 @@
 {% endblock %}
 
 {% block scripts %}
-<script src="https://code.iconify.design/iconify-icon/2.2.0/iconify-icon.min.js"></script>
 <script src="{{ _static_url }}/index.js" type="module"></script>
+{% include "components/iconify-icon.j2" %}
 {% endblock %}
 
 {% block body %}
   {% include "./_layouts/site-head.j2" %}
-  <div class="ui-root" data-page-container data-radius="medium">{{ body }}</div>
+  <div class="ui-root" data-page-container data-radius="medium" data-scaling="100%" data-has-background="true">
+    {{ body }}
+  </div>
   {% include "./_layouts/site-foot.j2" %}
 {% endblock %}

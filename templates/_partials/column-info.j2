@@ -16,7 +16,8 @@
       <div class="podcast-links">
         {% for item in theme_podcast_links %}
           <a href="{{ item.url }}"{% if item.blank %} target="_blank"{% endif %}>
-            {% if item.icon %}<iconify-icon icon="{{ item.icon }}"></iconify-icon>{% endif %}
+            {# TODO special handle for xiaoyuzhou #}
+            <iconify-icon icon="{{ item.icon }}"></iconify-icon>
             <span>{{ item.title }}</span>
           </a>
         {% endfor %}

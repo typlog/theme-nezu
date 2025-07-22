@@ -17,11 +17,11 @@ ul.nav-links {
   color: var(--gray-a11);
 }
 
-.nav-link > button > iconify-icon {
+.nav-link > button > svg {
   color: var(--gray-a9);
 }
 
-.nav-link > a > iconify-icon {
+.nav-link > a > svg {
   font-size: 68%;
   opacity: 0.6;
   color: var(--gray-a9);
@@ -44,13 +44,13 @@ ul.nav-links {
   cursor: pointer;
 }
 
-.nav-link > button > iconify-icon,
-.nav-link > a > iconify-icon {
+.nav-link > button > svg,
+.nav-link > a > svg {
   transition: transform 0.2s ease;
 }
 
-.nav-link:hover > [aria-controls] > iconify-icon,
-.nav-link > [aria-expanded="true"] > iconify-icon {
+.nav-link:hover > [aria-controls] > svg,
+.nav-link > [aria-expanded="true"] > svg {
   transform: rotate(180deg);
 }
 

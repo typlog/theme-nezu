@@ -1,5 +1,4 @@
 @import "./components/nav-links.css";
-@import "./components/nav-socials.css";
 @import "./components/theme-switch.css";
 @import "./components/hamburger.css";
 @import "./components/aria-tip.css";
@@ -82,10 +81,6 @@
   .site-head_actions .hamburger  {
     display: flex;
   }
-
-  .site-head_actions .nav-socials {
-    display: none;
-  }
 }
 
 @media (min-width: 768px) {
@@ -99,10 +94,6 @@
     align-items: center;
     justify-content: space-between;
     padding-left: 2rem;
-  }
-
-  .site-head_nav .nav-socials {
-    display: none;
   }
 
   .site-head_links {

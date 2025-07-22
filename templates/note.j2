@@ -16,7 +16,7 @@
   <div class="container">
     <article role="main" class="h-entry">
       <div class="entry-meta">
-        {% if note.note_type == 'audio' %}
+        {% if note.audio %}
           {% set episode = note.audio %}
           {% if episode.season and episode.episode %}
             <span class="item-label">S{{ episode.season }}E{{ episode.episode }}</span>

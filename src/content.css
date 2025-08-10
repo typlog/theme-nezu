@@ -1,7 +1,3 @@
-@import "./css/base.css";
-@import "./css/variables.css";
-@import "./css/layout.css";
-
 @import "./css/layout/entry-detail.css";
 
 @import "./css/partials/review.css";
@@ -13,7 +9,4 @@
 @import "./css/partials/previous-entry.css";
 @import "./css/partials/entry-comments.css";
 
-@import "./css/content/e-content.css";
-@import "./css/content/table.css";
-@import "./css/content/admonition.css";
-@import "./css/content/block-code.css";
+@import "./css/content/index.css";

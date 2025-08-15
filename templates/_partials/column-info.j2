@@ -13,32 +13,38 @@
       <h2>{{ podcast.subtitle }}</h2>
     {% endif %}
     <div class="podcast-links">
-      {% if theme_apple_podcast_url %}
-        <a href="{{ theme_apple_podcast_url }}">
+      {% if podcast.apple_url %}
+        <a href="{{ podcast.apple_url }}">
           <iconify-icon icon="simple-icons:applepodcasts"></iconify-icon>
           <span>Apple Podcast</span>
         </a>
       {% endif %}
-      {% if theme_spotify_url %}
-        <a href="{{ theme_spotify_url }}">
+      {% if podcast.spotify_url %}
+        <a href="{{ podcast.spotify_url }}">
           <iconify-icon icon="simple-icons:spotify"></iconify-icon>
           <span>Spotify</span>
         </a>
       {% endif %}
-      {% if theme_castro_url %}
-        <a href="{{ theme_castro_url }}">
+      {% if podcast.castro_url %}
+        <a href="{{ podcast.castro_url }}">
           <iconify-icon icon="simple-icons:castro"></iconify-icon>
           <span>Castro</span>
         </a>
       {% endif %}
-      {% if theme_pocketcasts_url %}
-        <a href="{{ theme_pocketcasts_url }}">
+      {% if podcast.overcast_url %}
+        <a href="{{ podcast.overcast_url }}">
+          <iconify-icon icon="simple-icons:overcast"></iconify-icon>
+          <span>Overcast</span>
+        </a>
+      {% endif %}
+      {% if podcast.pocketcasts_url %}
+        <a href="{{ podcast.pocketcasts_url }}">
           <iconify-icon icon="simple-icons:pocketcasts"></iconify-icon>
           <span>Pocket Casts</span>
         </a>
       {% endif %}
-      {% if theme_xyz_url %}
-        <a href="{{ theme_xyz_url }}">
+      {% if podcast.xiaoyuzhou_url %}
+        <a href="{{ podcast.xiaoyuzhou_url }}">
           <svg viewBox="0 0 30 30" width="1em" height="1em">
             <ellipse stroke="currentColor" stroke-width="2" fill="transparent" rx="4" ry="15" cx="14" cy="15" style="transform:rotate(52deg);transform-origin:50%;"></ellipse>
             <path fill="currentColor" d="M16.02 14.38c-2.63 2.04-5.21 3.79-7.47 5.11a9.89 9.89 0 004.63 1.15c5.46 0 9.88-4.43 9.88-9.91 0-.78-.09-1.54-.26-2.28-1.83 1.85-4.17 3.9-6.78 5.93zM3.31 10.73c0 1.09.17 2.14.5 3.12l.76 1.73c.2.36.42.7.66 1.03 2.3-1.23 5.21-3.14 8.27-5.51 3.04-2.35 5.61-4.69 7.37-6.6-.29-.36-.61-.7-.95-1.01l-1.49-1.16A9.873 9.873 0 0013.19.82c-5.46 0-9.88 4.44-9.88 9.91z" transform="rotate(-.774 346.995 -153.81)"></path>
@@ -46,7 +52,7 @@
           <span>小宇宙</span>
         </a>
       {% endif %}
-      {% for item in theme_podcast_links %}
+      {% for item in podcast.external_links %}
         <a href="{{ item.link }}"{% if item.blank %} target="_blank"{% endif %}>
           <iconify-icon icon="{{ item.icon }}"></iconify-icon>
           <span>{{ item.title }}</span>

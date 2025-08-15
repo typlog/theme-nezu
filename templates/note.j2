@@ -44,6 +44,22 @@
       </div>
       {% include "./_partials/entry-tags.j2" %}
     </article>
+    {% if theme_github_sponsor_url or theme_patreon_url or theme_afdian_url %}
+      <div class="entry-sponsors">
+        <p>{{ translate('sponsor') }}</p>
+        <div class="entry-sponsors-buttons">
+          {% if theme_github_sponsor_url %}
+            <a class="github" href="{{ theme_github_sponsor_url }}">GitHub Sponsor</a>
+          {% endif %}
+          {% if theme_patreon_url %}
+            <a class="patreon" href="{{ theme_patreon_url }}">Patreon</a>
+          {% endif %}
+          {% if theme_afdian_url %}
+            <a class="afdian" href="{{ theme_afdian_url }}">爱发电</a>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
     <div class="entry-actions">
       {% include "./_partials/enjoy-button.j2" %}
       {% include "./_partials/share-buttons.j2" %}

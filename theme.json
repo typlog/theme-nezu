@@ -35,7 +35,6 @@
     },
     {
       "friendlyName": "Podcast links",
-      "multiple": true,
       "fields": [
         {
           "name": "apple_podcast_url",
@@ -72,11 +71,15 @@
     },
     {
       "friendlyName": "Social links",
-      "multiple": true,
       "fields": [
         {
           "name": "x_url",
           "friendlyName": "X (Twitter)",
+          "type": "url"
+        },
+        {
+          "name": "bluesky_url",
+          "friendlyName": "BlueSky",
           "type": "url"
         },
         {
@@ -112,6 +115,26 @@
       ]
     },
     {
+      "friendlyName": "Sponsor links",
+      "fields": [
+        {
+          "name": "github_sponsor_url",
+          "friendlyName": "GitHub Sponsor",
+          "type": "url"
+        },
+        {
+          "name": "patreon_url",
+          "friendlyName": "Patreon",
+          "type": "url"
+        },
+        {
+          "name": "afdian_url",
+          "friendlyName": "爱发电",
+          "type": "url"
+        }
+      ]
+    },
+    {
       "name": "foot_links",
       "type": "SectionLinks",
       "multiple": true
@@ -134,6 +157,8 @@
     "switch_light#zh": "切换至明亮模式",
     "switch_dark": "Switch to dark color mode",
     "switch_dark#zh": "切换至黑暗模式",
+    "sponsor": "Support me via",
+    "sponsor#zh": "请通过以下方式赞助我",
     "copy": "Copy",
     "copy#zh": "复制"
   }

@@ -1,0 +1,46 @@
+.entry-sponsors {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 6px;
+  border: 2px dashed var(--gray-3);
+  background-color: var(--gray-1);
+}
+
+.entry-sponsors-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.entry-sponsors-buttons > a {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.entry-sponsors-buttons > a:hover {
+  opacity: 0.85;
+}
+
+.entry-sponsors-buttons > a.github,
+.entry-sponsors-buttons > a.patreon {
+  background-color: black;
+  color: white;
+}
+.entry-sponsors-buttons > a.afdian {
+  background-color: #946ce6;
+  color: white;
+}
+
+@media (max-width: 480px) {
+  .entry-sponsors-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .entry-sponsors-buttons > a {
+    width: 100%;
+  }
+}

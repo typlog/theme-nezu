@@ -26,29 +26,16 @@
       "new_tab": true
     }
   ],
+  "theme_github_url": "https://github.com/typlog/theme-nezu",
+  "theme_bluesky_url": "https://bsky.app/profile/typlog.com",
   "theme_social_links": [
-    {
-      "icon": "logos:github-icon",
-      "title": "GitHub",
-      "link": "https://github.com/typlog/theme-nezu"
-    },
-    {
-      "icon": "logos:bluesky",
-      "title": "Bluesky",
-      "link": "https://bsky.app/profile/typlog.com"
-    }
   ],
+  "theme_apple_podcast_url": "https://podcasts.apple.com/us/podcast/typlog/id1564550000",
+  "theme_spotify_url": "https://open.spotify.com/show/5Z6Z9Z6Z6Z6Z6Z6Z6Z6Z6Z",
   "theme_podcast_links": [
-    {
-      "icon": "simple-icons:applepodcasts",
-      "title": "Apple Podcasts",
-      "link": "https://podcasts.apple.com/us/podcast/typlog/id1564550000"
-    },
-    {
-      "icon": "simple-icons:spotify",
-      "title": "Spotify",
-      "link": "https://open.spotify.com/show/5Z6Z9Z6Z6Z6Z6Z6Z6Z6Z6Z"
-    }
   ],
+  "theme_github_sponsor_url": "https://github.com/sponsors/lepture",
+  "theme_patreon_url": "https://patreon.com/lepture",
+  "theme_afdian_url": "https://afdian.com/a/pythonhunter",
   "theme_copyright": "Copy &copy; 2024, <a href='https://typlog.com/'>Typlog</a>"
 }

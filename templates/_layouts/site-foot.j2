@@ -9,6 +9,13 @@
       </a>
     </li>
   {% endif %}
+  {% if theme_bluesky_url %}
+    <li class="icon-link">
+      <a href="{{ theme_bluesky_url }}" aria-label="BlueSky">
+        <iconify-icon icon="simple-icons:bluesky"></iconify-icon>
+      </a>
+    </li>
+  {% endif %}
   {% if theme_github_url %}
     <li class="icon-link">
       <a href="{{ theme_github_url }}" aria-label="GitHub">

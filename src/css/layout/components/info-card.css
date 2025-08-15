@@ -45,11 +45,11 @@
   display: inline-flex;
   align-items: center;
   gap: 0.425rem;
-  color: var(--gray-a11);
+  color: var(--gray-11);
 }
 
 .podcast-links a:hover {
-  color: var(--gray-a12);
+  color: var(--gray-12);
 }
 
 @media (max-width: 767px) {

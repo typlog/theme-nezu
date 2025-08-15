@@ -8,19 +8,25 @@
   "description": "A single column theme for blogs and podcasts.",
   "config": [
     {
-      "name": "color_mode",
-      "type": "enum",
-      "default": "auto",
-      "options": {
-        "choices": ["auto", "light", "dark"]
-      }
-    },
-    {
-      "name": "copyright",
-      "type": "string"
+      "friendlyName": "General",
+      "fields": [
+        {
+          "name": "color_mode",
+          "type": "enum",
+          "default": "auto",
+          "options": {
+            "choices": ["auto", "light", "dark"]
+          }
+        },
+        {
+          "name": "copyright",
+          "type": "string"
+        }
+      ]
     },
     {
       "name": "nav_links",
+      "friendlyName": "Navbar links",
       "type": "NavLink",
       "multiple": true,
       "options": {
@@ -28,14 +34,82 @@
       }
     },
     {
-      "name": "podcast_links",
-      "type": "IconLink",
-      "multiple": true
+      "friendlyName": "Podcast links",
+      "multiple": true,
+      "fields": [
+        {
+          "name": "apple_podcast_url",
+          "friendlyName": "Apple Podcast",
+          "type": "url"
+        },
+        {
+          "name": "spotify_url",
+          "friendlyName": "Spotify",
+          "type": "url"
+        },
+        {
+          "name": "castro_url",
+          "friendlyName": "Castro",
+          "type": "url"
+        },
+        {
+          "name": "pocketcasts_url",
+          "friendlyName": "Pocket Casts",
+          "type": "url"
+        },
+        {
+          "name": "xyz_url",
+          "friendlyName": "小宇宙",
+          "type": "url"
+        },
+        {
+          "name": "podcast_links",
+          "friendlyName": "Other links",
+          "type": "IconLink",
+          "multiple": true
+        }
+      ]
     },
     {
-      "name": "social_links",
-      "type": "IconLink",
-      "multiple": true
+      "friendlyName": "Social links",
+      "multiple": true,
+      "fields": [
+        {
+          "name": "x_url",
+          "friendlyName": "X (Twitter)",
+          "type": "url"
+        },
+        {
+          "name": "github_url",
+          "friendlyName": "GitHub",
+          "type": "url"
+        },
+        {
+          "name": "linkedin_url",
+          "friendlyName": "LinkedIn",
+          "type": "url"
+        },
+        {
+          "name": "discord_url",
+          "friendlyName": "Discord",
+          "type": "url"
+        },
+        {
+          "name": "youtube_url",
+          "friendlyName": "YouTube",
+          "type": "url"
+        },
+        {
+          "name": "reddit_url",
+          "friendlyName": "Reddit",
+          "type": "url"
+        },
+        {
+          "name": "social_links",
+          "type": "IconLink",
+          "multiple": true
+        }
+      ]
     },
     {
       "name": "foot_links",

@@ -1,4 +1,58 @@
-{% from "macros/links.j2" import render_section_links, render_icon_links %}
+{% from "macros/links.j2" import render_section_links %}
+
+{% macro render_social_links() %}
+<ul class="icon-links">
+  {% if theme_x_url %}
+    <li class="icon-link">
+      <a href="{{ theme_x_url }}" aria-label="X (Twitter)">
+        <iconify-icon icon="simple-icons:x"></iconify-icon>
+      </a>
+    </li>
+  {% endif %}
+  {% if theme_github_url %}
+    <li class="icon-link">
+      <a href="{{ theme_github_url }}" aria-label="GitHub">
+        <iconify-icon icon="simple-icons:github"></iconify-icon>
+      </a>
+    </li>
+  {% endif %}
+  {% if theme_linkedin_url %}
+    <li class="icon-link">
+      <a href="{{ theme_linkedin_url }}" aria-label="LinkedIn">
+        <iconify-icon icon="simple-icons:linkedin"></iconify-icon>
+      </a>
+    </li>
+  {% endif %}
+  {% if theme_discord_url %}
+    <li class="icon-link">
+      <a href="{{ theme_discord_url }}" aria-label="Discord">
+        <iconify-icon icon="simple-icons:discord"></iconify-icon>
+      </a>
+    </li>
+  {% endif %}
+  {% if theme_youtube_url %}
+    <li class="icon-link">
+      <a href="{{ theme_youtube_url }}" aria-label="YouTube">
+        <iconify-icon icon="simple-icons:youtube"></iconify-icon>
+      </a>
+    </li>
+  {% endif %}
+  {% if theme_reddit_url %}
+    <li class="icon-link">
+      <a href="{{ theme_reddit_url }}" aria-label="Reddit">
+        <iconify-icon icon="simple-icons:reddit"></iconify-icon>
+      </a>
+    </li>
+  {% endif %}
+  {%- for item in links -%}
+    <li class="icon-link">
+      <a href="{{ item.link }}" aria-label="{{ item.title }}"{% if item.new_tab  %} target="_blank"{% endif %}>
+        <iconify-icon icon="{{ item.icon }}"></iconify-icon>
+      </a>
+    </li>
+  {%- endfor -%}
+</ul>
+{% endmacro %}
 
 {% if theme_foot_links %}
 <div class="site-foot has-foot-links">
@@ -14,7 +68,7 @@
     {% if theme_copyright %}
       <div>{{ theme_copyright|safe }}</div>
     {% endif %}
-    {{ render_icon_links(theme_social_links) }}
+    {{ render_social_links() }}
   </div>
 </div>
 {% else %}
@@ -34,7 +88,7 @@
     {% if theme_copyright %}
       <div>{{ theme_copyright|safe }}</div>
     {% endif %}
-    {{ render_icon_links(theme_social_links) }}
+    {{ render_social_links() }}
   </div>
 </div>
 {% endif %}

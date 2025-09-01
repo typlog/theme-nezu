@@ -1,0 +1,32 @@
+{% if site.word_logo_light %}
+  {% if site.word_logo_dark %}
+    <span class="light-logo">
+      <img src="{{ site.word_logo_light|thumbnail('s') }}" loading="lazy" alt="{{ site.name }}"/>
+    </span>
+    <span class="dark-logo">
+      <img src="{{ site.word_logo_dark|thumbnail('s') }}" loading="lazy" alt="{{ site.name }}"/>
+    </span>
+  {% else %}
+    <span class="light-logo dark-logo">
+      <img src="{{ site.word_logo_light|thumbnail('s') }}" loading="lazy" alt="{{ site.name }}"/>
+    </span>
+  {% endif %}
+{% elif site.glyph_logo_light %}
+  {% if site.glyph_logo_dark %}
+    <span class="light-logo">
+      <img src="{{ site.glyph_logo_light|thumbnail('ss') }}" loading="lazy" alt="{{ site.name }}"/>
+      <strong>{{ site.name }}</strong>
+    </span>
+    <span class="dark-logo">
+      <img src="{{ site.glyph_logo_dark|thumbnail('ss') }}" loading="lazy" alt="{{ site.name }}"/>
+      <strong>{{ site.name }}</strong>
+    </span>
+  {% else %}
+    <span class="light-logo dark-logo">
+      <img src="{{ site.glyph_logo_light|thumbnail('ss') }}" loading="lazy" alt="{{ site.name }}"/>
+      <strong>{{ site.name }}</strong>
+    </span>
+  {% endif %}
+{% else %}
+  <strong>{{ site.name }}</strong>
+{% endif %}

@@ -33,8 +33,9 @@ html.dark {
 
 .js-search .DocSearch-Button {
   margin: 0;
-  height: auto;
+  height: 32px;
   width: auto;
+  box-sizing: border-box;
 }
 
 .js-search .DocSearch-Search-Icon {

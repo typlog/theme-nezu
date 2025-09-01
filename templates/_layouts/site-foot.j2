@@ -1,5 +1,3 @@
-{% from "macros/links.j2" import render_section_links %}
-
 {% macro render_social_links() %}
 <ul class="icon-links">
   {% if theme_x_url %}
@@ -61,6 +59,21 @@
 </ul>
 {% endmacro %}
 
+{% macro render_foot_links() %}
+  {%- for section in theme_foot_links -%}
+    <section class="section-links">
+      <h1 class="section-group-caption">{{ section.caption }}</h1>
+      <ul class="section-group-links">
+        {%- for item in section.links -%}
+          <li class="section-group-link">
+            <a href="{{ item.link }}" {% if item.new_tab  %} target="_blank"{% endif %}>{{ item.title }}</a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </section>
+  {%- endfor -%}
+{% endmacro %}
+
 {% if theme_foot_links %}
 <div class="site-foot has-foot-links">
   <div class="site-foot_content">
@@ -68,7 +81,7 @@
       {% include "components/site-logo.j2" %}
     </div>
     <div class="site-foot_links">
-      {{ render_section_links(theme_foot_links) }}
+      {{ render_foot_links() }}
     </div>
   </div>
   <div class="site-foot_copyright">

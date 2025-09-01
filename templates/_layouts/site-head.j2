@@ -1,11 +1,10 @@
-{% from "macros/links.j2" import render_nav_links %}
 <div class="site-head">
   <div class="site-head_content">
     <a class="site-head_brand" href="/">
-      {% include "components/site-logo.j2" %}
+      {% include "./components/site-logo.j2" %}
     </a>
     <div class="site-head_nav" id="HeadNav">
-      {{ render_nav_links(theme_nav_links) }}
+      {% include "./components/nav-links.j2" %}
     </div>
     <div class="site-head_actions">
       {% include "./components/searchbox.j2" %}

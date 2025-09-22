@@ -2,7 +2,6 @@ name: Make release
 
 permissions:
   contents: write
-  packages: write
 
 on:
   push:
@@ -13,20 +12,17 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          registry-url: 'https://npm.pkg.github.com'
       - run: npm ci
       - run: npm run build
-      - run: node .github/pre-release.js
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: npx changelogithub --no-group
-        continue-on-error: true
+      - run: npx changelogithub --assets 'static/*'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: npm run release
+        env:
+          THEME_SUBMIT_TOKEN: ${{ secrets.TYPLOG_TOKEN }}

@@ -2,14 +2,14 @@
   {% if site.glyph_logo_light %}
     {% if site.glyph_logo_dark %}
       <span class="light-logo">
-        <img class="u-photo" src="{{ site.glyph_logo_light|thumbnail('ss') }}" loading="lazy" alt="{{ site.name }}" width="160" height="160">
+        <img class="u-photo" src="{{ site.glyph_logo_light|thumbnail('ss') }}" fetchpriority="high" alt="{{ site.name }}" width="160" height="160">
       </span>
       <span class="u-photo" class="dark-logo">
-        <img src="{{ site.glyph_logo_dark|thumbnail('ss') }}" loading="lazy" alt="{{ site.name }}" width="160" height="160">
+        <img src="{{ site.glyph_logo_dark|thumbnail('ss') }}" fetchpriority="high" alt="{{ site.name }}" width="160" height="160">
       </span>
     {% else %}
       <span class="light-logo dark-logo">
-        <img class="u-photo" src="{{ site.glyph_logo_light|thumbnail('ss') }}" loading="lazy" alt="{{ site.name }}" width="160" height="160">
+        <img class="u-photo" src="{{ site.glyph_logo_light|thumbnail('ss') }}" fetchpriority="high" alt="{{ site.name }}" width="160" height="160">
       </span>
     {% endif %}
   {% endif %}
